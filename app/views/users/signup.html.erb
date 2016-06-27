@@ -1,0 +1,9 @@
+<h1> Sign Up </h1>
+<%= form_for :user, url: signup_path do |f| %>
+  <p> Basic Information: </p>  
+  <%= f.text_field :email, placeholder: "email" %> <br>
+  <%= f.password_field :password_provided, placeholder: "password" %> <br>
+  <p> What should your url be? </p>
+  <%= f.text_field :url, placeholder: "url" %> <br>
+  <%= f.submit "Start" %>
+<% end %>

@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html>
 <head>
-  <title>Now</title>
+  <title> Now Now Now </title>
   <!-- boostrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <!-- rails assets -->
@@ -11,13 +11,25 @@
 </head>
 <body>
 
-<div class="col-xs-12 container">
-  <%= yield %>
-</div>
+  <div class="col-xs-12 container">
+    <%= notice %>
+    <%= yield %>
+  </div>
 
-<div class="debug">
-  <%= debug(params) if Rails.env.development? %>
-</div>
+  <div class="debug">
+    <%= debug(params) if Rails.env.development? %>
+  </div>
 
 </body>
 </html>
+
+
+<!--
+  quickest way to V1.
+  - img fill out graphic.
+  - mechanism to notice when just signed up. // attached elements that usually arent there.
+  - edit page.
+  - angular - url simulation
+  - login page - an edit/update protection
+  - design? mobile.
+-->

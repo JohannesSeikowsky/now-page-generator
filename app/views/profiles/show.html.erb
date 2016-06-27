@@ -1,0 +1,38 @@
+<div class="after_signup_loader">
+  <%= image_tag "page-loader.gif" %>
+  <h4> A first version of your nowpage is being generated. <br> You can edit it to your wishes. </h4>
+</div>
+
+
+<!-- the default show -->
+<div class="profile col-xs-4 col-xs-offset-4">
+  <div class="headline">
+    <h1> What I’m doing now </h1>
+  </div>
+  <div class="content">
+     Hi, I’m Gregory Brown. I’m in New Haven, working on these things: <br> <br>
+      1) Writing essays and book chapters for Programming Beyond Practices. <br> <br>
+      2) Running an apprenticeship program for Madriska, Inc. <br> <br>
+      3) Writing a study guide for a Ruby certification program.<br> <br>
+      4) Answering questions, sharing ideas, and giving early access to my work to other programmers via The Practicing Developer’s Workshop. <br> <br>
+      To keep myself focused, I say no to any requests that aren’t related to the items listed above. I wish I could do more, but I have too much on my plate! If my activities change, I’ll update this page. Last update was in May 2016.
+  </div>
+</div>
+
+<div class="profile_sidebar col-xs-2 col-xs-offset-1">
+  <div class="profile_image">
+    <%= image_tag "no_image.png", class: "img-responsive img-circle" %>
+  </div>
+  <div class="descriptive_text">
+    <h3 style="text-decoration: underline;"> About me: </h3>
+    <h4> Married // Father // Cofounder of Netgen // eZPublish CMS Expert // Judoka Green Belt // CISEx member // Runner // History Reader</h4>
+  </div>
+</div>
+
+
+<!-- loading graphic js -->
+<script type="text/javascript">
+  $(window).load(function() {
+    $(".after_signup_loader").delay(4500).fadeOut("slow");
+  })
+</script>
