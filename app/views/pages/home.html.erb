@@ -1,12 +1,33 @@
-<div class="login">
-  <%= link_to "Login", login_path %>
+
+<!-- link to login -->
+<div class="link_to_login">
+  <%= link_to "Login", login_path, class: "btn btn-md btn-success" %>
 </div>
 
-<h1> Hi </h1>
-
-<p>The now page generator is the simplest way to create a slick <br> 
-now page for yourself to share, put onto social media profile etc. </p> <br>
-
-<%= link_to "Start", signup_page_path, class: "btn btn-medium btn-warning" %> <br> <br>
-
-
+<!-- content -->
+<div class="container_normal">
+  <h1> 1- now-page-generator </h1>
+  <p>
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+  </p>
+  <div class="button">
+    <%= link_to "Start The Party", signup_page_path, class: "btn btn-medium" %>
+  </div>
+  <h2> Benefits </h2>
+  <ul>
+    <li>At vero eos et accusamus et iusto odio </li>
+    <li>ri sint occaecati cupiditate non provident. </li>
+    <li> blanditiis praesentium voluptatum deleniti atque  </li>
+    <li>laborum et dolorum fuga. Et harum...</li>
+  </ul>
+  <h2> Example </h2>
+  <p>
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum...
+  </p>
+  <hr>
+  <%= image_tag "now1.jpg" %>
+  <h2> Movement </h2>
+  <p>
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum...
+  </p>
+</div>

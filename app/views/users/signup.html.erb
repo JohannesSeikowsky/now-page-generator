@@ -1,13 +1,19 @@
-<%= form_for :user, url: signup_path do |f| %>
-  <p> Sign up </p>  
-  <%= f.text_field :email, placeholder: "email" %> <br>
-  <%= f.password_field :password_provided, placeholder: "password" %> <br>
-  <%= f.text_field :url, placeholder: "your url" %> <br>
-  <p> www.mynowpage.com/ </p>
-  <%= f.submit "Start" %>
-<% end %>
 
-<!-- 
-, ng-model: "Entry.something"
-{{Entry.something}} 
--->
+<!-- link to login -->
+<div class="link_to_login">
+  <%= link_to "Login", login_path %>
+</div>
+
+<!-- content -->
+<div class="container_normal">
+  <%= form_for :user, url: signup_path do |f| %>
+    <p> Sign up </p>  
+    <%= f.text_field :email, placeholder: "email" %> <br>
+    <%= f.password_field :password_provided, placeholder: "password" %> <br>
+    <%= f.text_field :url, placeholder: "your url" %> <br>
+    <p> www.mynowpage.com/ </p>
+    <%= f.submit "Start" %>
+  <% end %>
+</div>
+
+<!--later: ng-model: "Entry.something" {{Entry.something}} -->

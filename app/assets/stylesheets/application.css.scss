@@ -1,30 +1,102 @@
-/*
- *= require_tree .
- *= require_self
-*/
+/* *= require_tree .
+ *= require_self */
 
-html, body {
+/* General */
+body {
   height: 100%;
-  padding-top: 40px;
+  margin-bottom: 75px;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  color: #333;
+  /* normal */
+  @media (min-width: 500px){ padding-top: 15px; }
+  /* mobile */
+  @media (max-width: 500px){ padding: 15px 10px 0px 10px; }
 }
 
-.container{
-  text-align: center;
-  height: 100%;
+/* Defininig functionalities */
+.container_normal{
+  /* normal  */
+  @media (min-width: 500px){ width: 500px; }
+  /* mobile  */
+  @media (max-width: 500px){ width: 100%; }
+  margin: 0px auto;
+  h1{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  h2{
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 9px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #eee;
+  }
+  p{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  hr{
+    height: 2px;
+    color: lightGrey;
+    background-color: lightGrey;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  img{
+    width: 80%;
+    height: auto;
+    margin: 15px 10% 15px 10%;
+  }
+  ul{
+    margin-bottom: 30px;
+    li{
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+  .button{
+    text-align: center;
+    padding: 30px 0px 25px 0px;
+    a{
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid black;
+      /* normal */
+      @media (min-width: 500px){ padding: 10px 75px; }
+      /* mobile */
+      @media (max-width: 500px){ padding: 13px 80px; }
+    }
+    a:hover{
+      background-color: orange;
+    }
+  }
 }
 
-.debug{
+/* Components */
+.link_to_login{
+  /* normal */
+  @media (min-width: 760px){ position: fixed; }
+  /* mobile */
+  @media (max-width: 760px){ position: absolute; }
+  top: 18px;
+  right: 26px;
+}
+
+.debug_area{
   position: fixed;
   bottom: 5px;
   left: 5px;
 }
 
-.login{
-  position: fixed;
-  top: 5px;
-  right: 10px;
-}
 
+/* Non-nomrmal pages */
 .after_signup_loader{
   background: #F7EEE5;
   position: fixed;
@@ -38,7 +110,6 @@ html, body {
   img{ margin-top: 100px; }
 }
 
-
 .profile{
   .headline{
     font-size: 44px;
@@ -50,17 +121,4 @@ html, body {
     line-height: 1.25;
   }
 }
-
-
-
-
-
-// profile edit
-.edit_profile_container{
-  textarea{
-    width: 500px;
-    height: 300px;
-  }
-}
-
 

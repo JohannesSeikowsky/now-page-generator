@@ -1,35 +1,25 @@
+
 <!DOCTYPE html>
 <html ng-app>
 <head>
-  <title> Now Now Now </title>
-  <!-- boostrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <title> Now </title>
   <!-- rails assets -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<body>
 
-  <div class="col-xs-12 container">
+  <!-- content -->
+  <div class="container_encapsulating">
     <%= notice %>
     <%= yield %>
   </div>
 
-  <div class="debug">
+  <!-- debug -->
+  <div class="debug_area">
     <%= debug(params) if Rails.env.development? %>
   </div>
 
 </body>
 </html>
-
-
-
-<!--
-  quickest way to V1.
-  - img fill out graphic.
-  - mechanism to notice when just signed up. // attached elements that usually arent there.
-  - edit page.
-  - angular - url simulation
-  - login page - an edit/update protection
-  - design? mobile.
--->

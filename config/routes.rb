@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   # login and out
-  get "/login", to: "session#login", as: "login"
-  get "/logout", to: "session#logout", as: "logout"
+  get "/login", to: "sessions#login", as: "login"
+  get "/logout", to: "sessions#logout", as: "logout"
 
   # signup page and action
   get "/signup", to: "users#signup_page", as: "signup_page"
