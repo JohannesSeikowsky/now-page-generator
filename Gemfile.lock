@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angularjs-rails (1.2.25)
     arel (6.0.3)
     bcrypt-ruby (3.0.1)
     binding_of_caller (0.7.2)
@@ -150,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   bcrypt-ruby
   byebug
   coffee-rails (~> 4.1.0)

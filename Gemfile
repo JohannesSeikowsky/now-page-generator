@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'angularjs-rails'
 
 group :development, :test do
   gem 'byebug'
