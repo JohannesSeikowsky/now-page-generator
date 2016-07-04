@@ -6,5 +6,14 @@
 
 <!-- content -->
 <div class="container_normal">
-  <h1>Login...</h1>
+  <h1> 1- login </h1>
+  <p>
+    Provide your email address and password to login so that only you are able to edit your nowpage.
+  </p>
+  <hr>
+  <%= form_for :user, url: signup_path do |f| %>
+    <%= f.text_field :email, placeholder: "email" %> <br>
+    <%= f.password_field :password_provided, placeholder: "password" %> <br>
+    <%= f.submit "Start" %>
+  <% end %>
 </div>
