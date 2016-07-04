@@ -2,9 +2,12 @@
   <p> Sign up </p>  
   <%= f.text_field :email, placeholder: "email" %> <br>
   <%= f.password_field :password_provided, placeholder: "password" %> <br>
-  <%= f.text_field :url, placeholder: "your url", ng-model: "Entry.something" %> <br>
+  <%= f.text_field :url, placeholder: "your url" %> <br>
   <p> www.mynowpage.com/ </p>
   <%= f.submit "Start" %>
 <% end %>
 
-{{Entry.something}}
+<!-- 
+, ng-model: "Entry.something"
+{{Entry.something}} 
+-->
