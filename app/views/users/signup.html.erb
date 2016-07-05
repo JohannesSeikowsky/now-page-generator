@@ -9,7 +9,7 @@
   <h1> 2- signup </h1>
   <p>
     We need some basic details and the url/adress you would like for your nowpage.
-    All information you ever provide here will be handled confidentially.
+    All information will be handled confidentially.
   </p>
   <hr>
   <%= form_for :user, url: signup_path do |f| %>
@@ -18,9 +18,17 @@
     <h4> Your Password: </h4>
     <%= f.password_field :password_provided, placeholder: "password" %> <br>
     <h4> Your URL/Address: </h4>
-    <%= f.text_field :url, placeholder: "url" %> <br>
+    <%= f.text_field :url, placeholder: "url", id: "url_input" %> <br>
+    <div id="url_simulation"> www.mynowpage.com/ </div> <br>
     <%= f.submit "Ready." %>
   <% end %>
 </div>
 
-<!--later: ng-model: "Entry.something" {{Entry.something}} -->
+<!-- js for showing url as its typed -->
+<script type="text/javascript">
+  var url_input = document.getElementById('url_input');
+
+  url_input.onkeyup = function(){
+      document.getElementById('url_simulation').innerHTML = "www.mynowpage.com/" + url_input.value;
+  }
+</script>

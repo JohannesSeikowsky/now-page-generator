@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   # profile show
   get "/:url_name", to: "profiles#show", as: "user_profile"
 
-  # profile edit page and action
-  get "/make_your_nowpage_great_again", to: "profiles#edit", as: "user_profile_edit"
-  put "/update", to: "profiles#update", as: "user_profile_update"
+  # profule edit and update
+  get "/edit", to: "profiles#edit", as: "user_profile_edit"
+  put "/edit", to: "profiles#update", as: "user_profile_update"
 
 end

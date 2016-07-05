@@ -1,33 +1,43 @@
+<!-- link to login -->
+<div class="link_to_login">
+  <%= link_to "Login", login_path %>
+</div>
+
+<!-- signup loader 
 <div class="signup_loader">
   <%= image_tag "page-loader.gif" %>
   <h4> You can easily edit the layout <br> that is being generated for you right now. </h4>
-</div>
+</div> -->
+
+<!-- only after sign up -->
+<% if request.referer == signup_url %>
+  <%= link_to "Edit your profile", user_profile_update_path %>
+<% end %>
 
 
-<!-- the default show -->
-<div class="profile col-xs-4 col-xs-offset-4">
-  <div class="headline">
-    <h1> What I’m doing now </h1>
-  </div>
-  <div class="content">
-     Hi, I’m Gregory Brown. I’m in New Haven, working on these things: <br> <br>
-      1) Writing essays and book chapters for Programming Beyond Practices. <br> <br>
-      2) Running an apprenticeship program for Madriska, Inc. <br> <br>
-      3) Writing a study guide for a Ruby certification program.<br> <br>
-      4) Answering questions, sharing ideas, and giving early access to my work to other programmers via The Practicing Developer’s Workshop. <br> <br>
-      To keep myself focused, I say no to any requests that aren’t related to the items listed above. I wish I could do more, but I have too much on my plate! If my activities change, I’ll update this page. Last update was in May 2016.
-  </div>
+<!-- show -->
+<div class="container_normal">
+  <h1> What I’m doing now </h1>
+  <h3> Johannes R. Seikowsky </h3>
+  <p>
+    These are the most important things I currently focus on: <br>
+    <strong>1) Places</strong> - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months.<br>
+    <strong>2) Programming</strong> - I hack. This site is my latest project example. I've done some others and have a long pipeline of ideas to work on. I'm also learning more about penetration testing, as part of which Im expanding my Ruby to Python.<br>
+    <strong>3) Writing </strong>- I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br>
+    <strong>4) Teaching</strong> - teaching is my day job. I do not consider it my primary career, but I nevertheless like it and think it an honourable profession.<br>
+  </p>
+  <hr>
+  <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:66%; margin: 15px 17% 15px 17%;" %>
+  <hr>
+  <p> 
+    I'm interested in programming, writing, research and teaching. Please feel free to get in touch about collaborating on any project concerned with these interests.
+  </p>
+  <form>
+    <textarea></textarea>
+    <input type="submit" value="Send" >
+  </form>
 </div>
 
-<div class="profile_sidebar col-xs-2 col-xs-offset-1">
-  <div class="profile_image">
-    <%= image_tag "no_image.png", class: "img-responsive img-circle" %>
-  </div>
-  <div class="descriptive_text">
-    <h3 style="text-decoration: underline;"> About me: </h3>
-    <h4> Married // Father // Cofounder of Netgen // eZPublish CMS Expert // Judoka Green Belt // CISEx member // Runner // History Reader</h4>
-  </div>
-</div>
 
 
 <!-- loading graphic js -->
