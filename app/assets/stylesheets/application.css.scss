@@ -1,26 +1,24 @@
-/* *= require_tree .
- *= require_self */
+// *= require_tree .
+// *= require_self
 
-/* General */
+// General
 body {
   height: 100%;
   margin-bottom: 75px;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   color: #333;
-  /* normal */
+  // normal and mobile
   @media (min-width: 500px){ padding-top: 15px; }
-  /* mobile */
   @media (max-width: 500px){ padding: 15px 10px 0px 10px; }
-  a {
+  a{
     color: grey;
   }
 }
 
-/* Defininig functionalities */
+// Functionalities
 .container_normal{
-  /* normal  */
+  // normal and mobile
   @media (min-width: 500px){ width: 500px; }
-  /* mobile  */
   @media (max-width: 500px){ width: 100%; }
   margin: 0px auto;
   h1{
@@ -45,8 +43,8 @@ body {
   }
   hr{
     height: 2px;
-    color: lightGrey;
-    background-color: lightGrey;
+    color: #e7e7e7;
+    background-color: #e7e7e7;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -62,6 +60,7 @@ body {
       line-height: 1.6;
     }
   }
+  // Links
   .button{
     text-align: center;
     padding: 30px 0px 25px 0px;
@@ -71,22 +70,49 @@ body {
       font-weight: bold;
       text-decoration: none;
       border: 2px solid black;
-      /* normal */
+      // normal and mobile
       @media (min-width: 500px){ padding: 10px 75px; }
-      /* mobile */
       @media (max-width: 500px){ padding: 13px 80px; }
     }
     a:hover{
       background-color: orange;
     }
   }
+  // Form elements
+  form h4{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+
+  }
+  input[type=text], input[type=password]{
+    width: 355px;
+    height: 36px;
+    margin-bottom: 0px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+  }
+  input[type=submit]{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    margin-top: 20px;
+    // normal and mobile
+    @media (min-width: 500px){ padding: 10px 75px; }
+    @media (max-width: 500px){ padding: 13px 80px; }
+  }
+  input[type=submit]:hover{
+    background-color: orange;
+    cursor: pointer;
+  }
 }
 
-/* Components */
+
+// Components
 .link_to_login{
-  /* normal */
+  // normal and mobile 
   @media (min-width: 760px){ position: fixed; }
-  /* mobile */
   @media (max-width: 760px){ position: absolute; }
   top: 18px;
   right: 26px;
@@ -98,10 +124,8 @@ body {
   left: 5px;
 }
 
-
-/* Non-nomrmal pages */
-.after_signup_loader{
-  background: #F7EEE5;
+// Non-nomrmal pages
+.signup_loader{
   position: fixed;
   left: 0px;
   top: 0px;
@@ -109,8 +133,15 @@ body {
   height: 100%;
   z-index: 9999;
   text-align: center;
-  h4{ margin-top: 18px; } 
-  img{ margin-top: 100px; }
+  background: #F7EEE5;
+  img{ 
+    width: 125px;
+    height: auto;
+    margin-top: 100px; 
+  }
+  h2{ 
+    margin-top: 18px; 
+  } 
 }
 
 .profile{

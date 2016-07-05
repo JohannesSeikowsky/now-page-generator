@@ -6,17 +6,20 @@
 
 <!-- content -->
 <div class="container_normal">
-  <h1> 1- signup </h1>
+  <h1> 2- signup </h1>
   <p>
     We need some basic details and the url/adress you would like for your nowpage.
     All information you ever provide here will be handled confidentially.
   </p>
   <hr>
   <%= form_for :user, url: signup_path do |f| %>
+    <h4> Your Email: </h4>
     <%= f.text_field :email, placeholder: "email" %> <br>
+    <h4> Your Password: </h4>
     <%= f.password_field :password_provided, placeholder: "password" %> <br>
+    <h4> Your URL/Address: </h4>
     <%= f.text_field :url, placeholder: "your url" %> <br>
-    <%= f.submit "Start" %>
+    <%= f.submit "Ready." %>
   <% end %>
 </div>
 
