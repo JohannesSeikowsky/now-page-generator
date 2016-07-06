@@ -1,10 +1,11 @@
 // *= require_tree .
 // *= require_self
+// *= require font-awesome
 
 // General
 body {
   height: 100%;
-  margin-bottom: 85px;
+  margin-bottom: 18px;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   color: #333;
   // normal and mobile
@@ -152,6 +153,14 @@ body {
   position: fixed;
   bottom: 5px;
   left: 5px;
+}
+
+.with_love{
+  padding-top: 70px;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  color: #BCBCBC;
 }
 
 #url_simulation{

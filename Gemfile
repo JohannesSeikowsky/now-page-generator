@@ -12,7 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 
 gem "bcrypt-ruby", :require => "bcrypt"
-gem 'angularjs-rails'
+gem "font-awesome-rails"
 
 
 group :production do
