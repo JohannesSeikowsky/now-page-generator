@@ -1,8 +1,11 @@
-
-<!-- link to login -->
-<div class="link_to_login">
-  <%= link_to "What is a nowpage?", login_path %> |
+<!-- header -->
+<div class="show_header">
+  <%= link_to "What is a nowpage?", login_path, id: "explain_now_link" %> |
   <%= link_to "Login", login_path %>
+</div>
+
+<div class="explain_now" id="whatev">
+  A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it a really cool and valuable thing to do. They say it helps them focus.
 </div>
 
 <!-- signup loader 
@@ -11,13 +14,12 @@
   <h4> You can easily edit the layout <br> that is being generated for you right now. </h4>
 </div> -->
 
-<!-- only after sign up -->
+<!-- after signup -->
 <% if request.referer == signup_url %>
   <%= link_to "Edit your profile", user_profile_update_path %>
 <% end %>
 
-
-<!-- show -->
+<!-- content -->
 <div class="container_normal">
   <h1> What I’m doing now </h1>
   <h3> Johannes R. Seikowsky </h3>
@@ -41,10 +43,18 @@
 </div>
 
 
-
-<!-- loading graphic js -->
+<!-- js -->
 <script type="text/javascript">
+  // fadeOut laoder graphic
   $(window).load(function() {
     $(".signup_loader").delay(5500).fadeOut("slow");
   })
+  // toggle explain_now text
+  $("#explain_now_link").hover(function(){
+    $('.explain_now').css("display", "inline");
+    }, function(){
+    $('.explain_now').css("display", "none");
+  });
 </script>
+
+
