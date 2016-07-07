@@ -1,6 +1,6 @@
 <!-- header -->
-<div class="show_header">
-  <%= link_to "What is a nowpage?", login_path, id: "explain_now_link" %> |
+<div class="header_on_show">
+  <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
   <%= link_to "Login", login_path %>
 </div>
 
@@ -49,7 +49,7 @@
   $(window).load(function() {
     $(".signup_loader").delay(5500).fadeOut("slow");
   })
-  // toggle explain_now text
+  // toggle explain_now visible, non-visible
   $("#explain_now_link").hover(function(){
     $('.explain_now').css("display", "inline");
     }, function(){
