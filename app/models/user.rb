@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # associations
   has_one :profile
 
-  # validations
+  # validations (add here when necessary)
   # validates_presence_of :email, :password_provided, :url
   # validates_uniqueness_of :email, :url
   # add validations: password length min 6 + email regex (write yourself)

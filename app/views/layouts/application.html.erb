@@ -12,8 +12,13 @@
 
   <!-- content -->
   <div class="container_encapsulating">
-    <%= notice %>
+    <div class="notice"> <%= notice %> </div>
     <%= yield %>
+  </div>
+
+  <!-- love -->
+  <div class="with_love">
+    Made with <i class="fa fa-heart" aria-hidden="true"></i> in Tel Aviv
   </div>
 
   <!-- debug -->
@@ -21,18 +26,12 @@
     <%= debug(params) if Rails.env.development? %>
   </div>
 
-  <!-- with Love -->
-  <div class="with_love">
-    Created with <i class="fa fa-heart" aria-hidden="true"></i> in Tel Aviv
-  </div>
-
-  <!-- js -->
   <script type="text/javascript">
-    // make surr 'love' is on bottom 
+    // making surr 'love' stays on the bottom on all pages
     var window_height = $(window).height();
     var body_height = $('body').height();
     if ( window_height > body_height ){ 
-      $('.with_love').css({"position": "absolute", "bottom": "22px"});
+      $('.with_love').css({"position": "absolute", "bottom": "22px", "padding-top": "5px"});
     };
   </script>
 
@@ -41,25 +40,23 @@
 
 
 <!--
-  At first, make a product that's good enough
-  - add design that directs the user after signup / pointer as how to use it
-  - add name to signup
+  Notion of good-enough first, then editing
 
-  prelauch:
+  - design directs user after signup / pointer as how to use his/her nowpage
+  before lauch:
   - basic edit page
   - error and redirect messages
   - login protection - only right user can edit a nowpage 
   - photo uploading functionality
   - dealing with white space in url? simple way.
-  - editing text functionality for user - plugin?
   - Logo
 
-  postlaunch:
+  after launch:
+  - editing text functionality for user - plugin? / think this can be done after launch
   - wirte "get your own nowpage as javascript 'pop up"
   - getting/giving feedback / external plugin
   - research - what cool external tools are there to use. fun.
   - code editing
   - adding links functionality on page? maybe. decide on this. play around.
-
 -->
 

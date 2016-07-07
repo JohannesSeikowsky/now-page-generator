@@ -1,23 +1,25 @@
 <!-- header -->
 <div class="header_on_show">
-  <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
-  <%= link_to "Login", login_path %>
+  <% if request.referer == signup_url %>
+    --> <%= link_to "EDIT LAYOUT", "#", class: "link" %>
+  <% else %>
+    <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
+    <%= link_to "Login", login_path %>
+  <% end %>
 </div>
 
+<!-- explain nowpage -->
 <div class="explain_now" id="whatev">
   A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it n uplifting and valuable thing to do. They say it helps them focus.
 </div>
 
 <!-- signup loader 
-<div class="signup_loader">
-  <%= image_tag "page-loader.gif" %>
-  <h4> You can easily edit the layout <br> that is being generated for you right now. </h4>
-</div> -->
-
-<!-- after signup -->
 <% if request.referer == signup_url %>
-  <%= link_to "Edit your profile", user_profile_update_path %>
-<% end %>
+  <div class="signup_loader">
+    <%= image_tag "page-loader.gif" %>
+    <h4> A default layout is being generated for you. <br> You can edit it to your liking. </h4>
+  </div> 
+<% end %>-->
 
 <!-- content -->
 <div class="container_normal">
@@ -28,7 +30,6 @@
     <strong>1) Places</strong> - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well.<br>
     <strong>2) Programming</strong> - I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from hacking in Ruby to hacking in Python.<br>
     <strong>3) Writing </strong>- I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br>
-    <!-- <strong>4) Teaching</strong> - teaching is my day job. I do not consider it my primary career, but I nevertheless like it and think it an honourable profession.<br> -->
   </p>
   <hr>
   <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %>
@@ -49,7 +50,7 @@
   $(window).load(function() {
     $(".signup_loader").delay(5500).fadeOut("slow");
   })
-  // toggle explain_now visible, non-visible
+  // toggle explain_now visible non-visible
   $("#explain_now_link").hover(function(){
     $('.explain_now').css("display", "inline");
     }, function(){

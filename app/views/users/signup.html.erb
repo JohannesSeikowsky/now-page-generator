@@ -13,6 +13,8 @@
   </p>
   <hr>
   <%= form_for :user, url: signup_path do |f| %>
+    <h4> Your Name: </h4>
+    <%= f.text_field :name, placeholder: "name" %> <br>
     <h4> Your Email: </h4>
     <%= f.text_field :email, placeholder: "email" %> <br>
     <h4> Your Password: </h4>

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.build_profile(content: "This worked well.").save
-      redirect_to user_profile_path(url_name: @user.url), notice: "Welcome."
+      redirect_to user_profile_path(url_name: @user.url)
     else
       redirect_to root_path, notice: "Not signed up. Something went wrong."
     end
