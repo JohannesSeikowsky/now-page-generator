@@ -1,11 +1,15 @@
 <!-- header -->
 <div class="simple_header">
-  <%= link_to "Login", login_path %>
+  <%= link_to "Signup", signup_path %>
 </div>
 
 <!-- content -->
 <div class="simple_container">
   <h1> 2- login </h1>
+  <p>
+    We need your email and password combination, so that only you can edt your nowpage. 
+  </p>
+  <hr>
   <%= form_for :login_provided, url: login_path do |f| %>
     <h4> Your Email: </h4>
     <%= f.text_field :email, placeholder: "email" %> <br>

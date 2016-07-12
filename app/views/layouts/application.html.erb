@@ -9,6 +9,13 @@
 </head>
 <body>
 
+  <!-- logo -->
+  <div class="logo">
+    <%= link_to root_path do %>
+      <%= image_tag "logo.png" %> </a>
+    <% end %>
+  </div>
+
   <!-- content -->
   <div class="container_encapsulating">
     <div class="notice"> <%= notice %> </div>
@@ -26,7 +33,7 @@
   </div>
 
   <script type="text/javascript">
-    // making 'love' stays on the bottom on all pages
+    // making 'love' stay on the bottom on all pages
     var window_height = $(window).height();
     var body_height = $('body').height();
     if ( window_height > body_height ){ 
