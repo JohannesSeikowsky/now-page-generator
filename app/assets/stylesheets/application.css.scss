@@ -223,18 +223,29 @@ body {
   @media (max-width: 500px){ padding: 13px 80px; }
 }
 
-// after signup directions
+// after-signup-directions
 .after_signup_directions{
   position: fixed;
-  top: 110px;
-  left: 75px;
-  width: 225px; 
+  //top: 110px;
+  //left: 75px;
+  top: 55px;
+  right: 25px;
+  width: 204px; 
   color: black;
+  background-color: white;
   border: 2px solid black;
   border-radius: 5px;
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   padding: 26px;
+  #close{
+    position: absolute;
+    //top: -8px;
+    //right: -9px;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+  }
 }
 
 // 3. user show page

@@ -13,17 +13,24 @@
   A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it an uplifting and valuable thing to do. They say it helps them focus.
 </div>
 
-<!-- signup loader -->
+<!-- signup loader 
 <% if request.referer == signup_url %>
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
     <h4> nowpage.com/<%= @user.url %> <br> is being born. </h4>
   </div> 
-<% end %>
+<% end %>-->
 
+<!-- after signup directions -->
 <% if request.referer == signup_url %>
   <div class="after_signup_directions">
-    <strong> You are now online. </strong> <br> You can edit the layout here: <%= link_to "edit.", "#" %> Or anytime you log in. <br> <br> <strong> Ideas for use </strong> <br>
+    <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
+    <strong> You are now online. </strong> <br>
+    You can edit this layout if you log or right below. <br>
+
+    <%= link_to "Edit this layout.", "#" %> <br> <br>
+
+    <strong> Ideas for use </strong> <br>
     - In the footer of emails <br>
     - On business cards <br>
     - For yourself and fun <br>
@@ -39,7 +46,6 @@
     - you get the idea...
   </div>
 <% end %>
-
 
 <!-- content -->
 <div class="simple_container">
@@ -68,6 +74,10 @@
   $(window).load(function() {
     $(".signup_loader").delay(5500).fadeOut("slow");
   })
+  // close button for after-signup-directions
+  $('#close').click(function(){
+    $('.after_signup_directions').css("display", "none");
+  });
   // toggle explain_now visible non-visible
   $("#explain_now_link").hover(function(){
     $('.explain_now').css("display", "inline");
