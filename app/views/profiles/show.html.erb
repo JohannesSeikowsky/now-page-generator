@@ -1,7 +1,7 @@
 <!-- header -->
-<div class="header_on_show">
+<div class="simple_header">
   <% if request.referer == signup_url %>
-    --> <%= link_to "EDIT LAYOUT", "#", class: "link" %>
+    <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
   <% else %>
     <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
     <%= link_to "Login", login_path %>
@@ -10,26 +10,44 @@
 
 <!-- explain nowpage -->
 <div class="explain_now" id="whatev">
-  A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it n uplifting and valuable thing to do. They say it helps them focus.
+  A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it an uplifting and valuable thing to do. They say it helps them focus.
 </div>
 
 <!-- signup loader -->
 <% if request.referer == signup_url %>
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
-    <h4> A default layout is being generated for you. <br> You can edit it to your liking. </h4>
+    <h4> nowpage.com/<%= @user.url %> <br> is being born. </h4>
   </div> 
 <% end %>
 
+<% if request.referer == signup_url %>
+  <div class="after_signup_directions">
+    <strong> Your nowpage is now online. </strong> <br> You can edit the layout here: <%= link_to "edit.", "#" %> Or anytime you log in. <br> <br> <strong> Ideas for use </strong> <br>
+    - In the footer of emails <br>
+    - On business cards <br>
+    - For yourself and fun <br>
+    - LinkedIn <br>
+    - Facebook <br>
+    - Twitter <br>
+    - Instagram <br>
+    - Github <br>
+    - Medium <br>
+    - Tumblr <br>
+    - Dribble <br>
+    - Catlovers.com <br>
+    - you get the idea...
+  </div>
+<% end %>
+
+
 <!-- content -->
-<div class="container_normal">
+<div class="simple_container">
   <h1> What I’m doing now </h1>
   <h3> Johannes R. Seikowsky </h3>
   <p>
-    These are the most important things I currently focus on: <br>
-    <strong>1) Places</strong> - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well.<br>
-    <strong>2) Programming</strong> - I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from hacking in Ruby to hacking in Python.<br>
-    <strong>3) Writing </strong>- I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br>
+    These are the most important things I currently focus on:
+    Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br>
   </p>
   <hr>
   <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %>
