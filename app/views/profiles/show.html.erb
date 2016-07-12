@@ -13,13 +13,13 @@
   A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it an uplifting and valuable thing to do. They say it helps them focus.
 </div>
 
-<!-- signup loader 
+<!-- signup loader -->
 <% if request.referer == signup_url %>
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
     <h4> nowpage.com/<%= @user.url %> <br> is being born. </h4>
   </div> 
-<% end %>-->
+<% end %>
 
 <!-- after signup directions -->
 <% if request.referer == signup_url %>
