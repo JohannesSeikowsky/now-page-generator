@@ -165,11 +165,11 @@ body {
 // logo
 .simple_logo{
   position: fixed;
-  top: 25px;
-  left: 25px;
+  top: 20px;
+  left: 20px;
   @media (max-width: 790px){ display: none; } // point at whch not to show logo
   img{
-    width: 90px;
+    width: 27px;
     height: auto;
   }
 }
