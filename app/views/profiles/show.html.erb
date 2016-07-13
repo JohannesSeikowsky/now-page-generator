@@ -12,7 +12,7 @@
     <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
   <% else %>
     <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
-    <%= link_to "Login", login_path %>
+    <%= link_to "Login & Edit", login_path %>
   <% end %>
 </div>
 
@@ -27,7 +27,6 @@
     <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
     <strong> You are now online. </strong> <br>
     You can edit your layout if you log in or right below. <br>
-
     <%= link_to "Edit this layout.", "#" %> <br> <br>
 
     <strong> How to use a nowpage </strong> <br>
@@ -47,7 +46,8 @@
   </div>
 <% end %>
 
-<!-- content -->
+
+<!-- central content -->
 <div class="simple_container">
   <h1> What I’m doing now </h1>
   <h3> Johannes R. Seikowsky (Layout) </h3>
@@ -70,15 +70,15 @@
 
 <!-- js -->
 <script type="text/javascript">
-  // fadeOut laoder graphic
+  // fadeOut loader graphic
   $(window).load(function() {
     $(".signup_loader").delay(5500).fadeOut("slow");
   })
-  // close button for after-signup-directions
+  // close button for after-signup-directions div
   $('#close').click(function(){
     $('.after_signup_directions').css("display", "none");
   });
-  // toggle explain_now visible non-visible
+  // toggling explain_now visibility
   $("#explain_now_link").hover(function(){
     $('.explain_now').css("display", "inline");
     }, function(){
