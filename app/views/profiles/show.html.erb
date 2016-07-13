@@ -1,3 +1,11 @@
+<!-- signup loader -->
+<% if request.referer == signup_url %>
+  <div class="signup_loader">
+    <%= image_tag "page-loader.gif" %>
+    <h4> nowpage.com/<%= @user.url %> <br> is being built. </h4>
+  </div> 
+<% end %>
+
 <!-- header -->
 <div class="simple_header">
   <% if request.referer == signup_url %>
@@ -8,25 +16,17 @@
   <% end %>
 </div>
 
-<!-- explain nowpage -->
+<!-- explain what nowpage is -->
 <div class="explain_now" id="whatev">
   A Nowpage is a public declaration of priorities. It is where you state to yourself and to others what you are focusing on now. The nowpage movement has been started by Derek Sivers. Many people have begun to add nowpages to their own websites. Many find it an uplifting and valuable thing to do. They say it helps them focus.
 </div>
-
-<!-- signup loader -->
-<% if request.referer == signup_url %>
-  <div class="signup_loader">
-    <%= image_tag "page-loader.gif" %>
-    <h4> nowpage.com/<%= @user.url %> <br> is being built. </h4>
-  </div> 
-<% end %>
 
 <!-- after signup directions -->
 <% if request.referer == signup_url %>
   <div class="after_signup_directions">
     <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
     <strong> You are now online. </strong> <br>
-    You can edit this layout if you log in or below. <br>
+    You can edit your layout if you log in or right below. <br>
 
     <%= link_to "Edit this layout.", "#" %> <br> <br>
 
