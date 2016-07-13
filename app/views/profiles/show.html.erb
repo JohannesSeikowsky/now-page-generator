@@ -17,7 +17,7 @@
 <% if request.referer == signup_url %>
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
-    <h4> nowpage.com/<%= @user.url %> <br> is being born. </h4>
+    <h4> nowpage.com/<%= @user.url %> <br> is being built. </h4>
   </div> 
 <% end %>
 
@@ -53,7 +53,7 @@
   <h3> Johannes R. Seikowsky (Layout) </h3>
   <p>
     These are the most important things I currently focus on:
-    Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br>
+    Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br> <%= link_to "Edit this layout.", "#" %>
   </p>
   <hr>
   <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %>

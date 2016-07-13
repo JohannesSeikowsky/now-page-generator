@@ -163,10 +163,11 @@ body {
   left: 5px;}
 
 // logo
-.logo{
+.simple_logo{
   position: fixed;
   top: 25px;
   left: 25px;
+  @media (max-width: 790px){ display: none; } // point at whch not to show logo
   img{
     width: 90px;
     height: auto;
