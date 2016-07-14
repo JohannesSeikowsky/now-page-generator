@@ -1,12 +1,2 @@
+<h1> Editing happens here </h1>
 <%= render "profile_errors" %>
-
-<h1> NOW </h1>
-<p> This is my /now page. A now page is a declaration of what one is currently up to. It has been inspired by <br>
-  Derek Sivers and the now-page movement. More and more people are adding now pages to their websites. </p>
-
-<div class="edit_profile_container">
-<%= form_for :profile, url: user_profile_update_path do |f| %>
-  <%= f.text_area :content, placeholder: "content" %> <br>
-  <%= f.submit "Edit" %>
-<% end %>
-</div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # login and out
   get "/login", to: "sessions#login", as: "login"
+  post '/login', to: "sessions#login_action", as: "login_action"
   get "/logout", to: "sessions#logout", as: "logout"
 
   # signup page and action

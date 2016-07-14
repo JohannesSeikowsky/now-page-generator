@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     self.password = BCrypt::Engine.hash_secret(password_provided, password_salt)
   end
 
+  # function that checks wether passwords checks out.
+  def check_password(password_provided)
+    BCrypt::Engine.hash_secret(password_provided, self.password_salt) == self.password
+  end
 end

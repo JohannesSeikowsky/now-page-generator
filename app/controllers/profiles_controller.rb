@@ -5,8 +5,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
-    @profile = @user.profile
+    render 'edit'
+    #@user = User.find(params[:id])
+    #@profile = @user.profile
   end
 
   def update
