@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @user.build_profile(content: "This worked well.").save
       redirect_to user_profile_path(url_name: @user.url)
     else
-      redirect_to signup_path, notice: "Not signed up. Something went wrong."
+      render "signup"
     end
   end
 
