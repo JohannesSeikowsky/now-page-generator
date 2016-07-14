@@ -3,12 +3,12 @@ class User < ActiveRecord::Base
   # associations
   has_one :profile
 
-  # validations (add here when necessary)
-  # validates_presence_of :email, :password_provided, :url
-  # validates_uniqueness_of :email, :url
-  # add validations: password length min 6 + email regex (write yourself)
+  # validations
+  validates_presence_of :email, :password_provided, :url
+  validates_uniqueness_of :email, :url
+  validates_length_of :email, :password_provided, minimum: 6
 
-  # taking care of saving passwords correctly
+  # saving users passwords safely
   attr_accessor :password_provided
   before_save :generate_passwords
 

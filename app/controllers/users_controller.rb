@@ -8,10 +8,11 @@ class UsersController < ApplicationController
   def signup
     @user = User.new(user_params)
     if @user.save
+      # setting the default profile eher upon creation.
       @user.build_profile(content: "This worked well.").save
       redirect_to user_profile_path(url_name: @user.url)
     else
-      redirect_to root_path, notice: "Not signed up. Something went wrong."
+      redirect_to signup_path, notice: "Not signed up. Something went wrong."
     end
   end
 

@@ -19,9 +19,15 @@
     <% end %>
   </div>
 
+  <!-- notice -->
+  <% if notice %>
+    <div class="simple_notice">
+      <p> <%= notice %> </p>
+    </div>
+  <% end %>
+
   <!-- content -->
-  <div class="container_encapsulating">
-    <div class="notice"> <%= notice %> </div>
+  <div>
     <%= yield %>
   </div>
 
@@ -35,8 +41,9 @@
     <%= debug(params) if Rails.env.development? %>
   </div>
 
-  <!-- making 'love' stay on the bottom of all pages -->
+  <!-- js-->
   <script type="text/javascript">
+    // making love stay on bottom on all pages.
     var window_height = $(window).height();
     var body_height = $('body').height();
     if ( window_height > body_height ){ 
@@ -48,17 +55,7 @@
 </html>
 
 
-
-<!-- 
-  write a good enough version that does the essentials, then ship it, then iterate
-
-  whats left
-  - 1. design the landing page
-  - hack up: editing of profiles / login functionality / photo uploading functionality
-  - msg styling and msg checking (basics)
-  - url config
-  - see signup
--->
+<!-- hack up a very crude version1, then iterate -->
 
 
 

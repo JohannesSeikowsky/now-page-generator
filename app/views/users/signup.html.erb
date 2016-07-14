@@ -5,10 +5,19 @@
 
 <!-- content -->
 <div class="simple_container">
+  <% if @user.errors.any? %>
+    <div class="errors">
+      <h3>Some errors occured:</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <h2> Signup </h2>
   <%= form_for :user, url: signup_path do |f| %>
-    <!-- <h4> Your Name: </h4>
-    <%= f.text_field :name, placeholder: "name" %> <br> -->
     <h4> Email: </h4>
     <%= f.text_field :email, placeholder: "email" %> <br>
     <h4> Password: </h4>
@@ -20,11 +29,10 @@
   <% end %>
 </div>
 
-<!-- js for showing url as its typed -->
+<!-- js for simulating url choice -->
 <script type="text/javascript">
   var url_input = document.getElementById('url_input');
 
   url_input.onkeyup = function(){
-      document.getElementById('url_simulation').innerHTML = "www.mynowpage.com/" + url_input.value;
-  }
+      document.getElementById('url_simulation').innerHTML = "www.mynowpage.com/" + url_input.value;}
 </script>
