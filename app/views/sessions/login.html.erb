@@ -7,9 +7,9 @@
 <div class="simple_container">
   <h2> Login </h2>
   <%= form_for :login_provided, url: login_path do |f| %>
-    <h4> Email: </h4>
+    <h4> Your Email: </h4>
     <%= f.text_field :email, placeholder: "email" %> <br>
-    <h4> Password: </h4>
+    <h4> Your Password: </h4>
     <%= f.password_field :password, placeholder: "password" %> <br>
     <%= f.submit "Login." %>
   <% end %>

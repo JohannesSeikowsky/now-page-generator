@@ -2,14 +2,14 @@
 <% if request.referer == signup_url %>
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
-    <h4> nowpage.com/<%= @user.url %> <br> is being built. </h4>
+    <h3> nowpage.com/<%= @user.url %> <br> is being born. </h3>
   </div> 
 <% end %>
 
 <!-- header -->
 <div class="simple_header">
   <% if request.referer == signup_url %>
-    <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
+    --> <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
   <% else %>
     <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
     <%= link_to "Login & Edit", login_path %>
@@ -26,10 +26,10 @@
   <div class="after_signup_directions">
     <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
     <strong> You are now online. </strong> <br>
-    You can edit your layout if you log in or right below. <br>
-    <%= link_to "Edit this layout.", "#" %> <br> <br>
+    You can edit your layout anytime you log in or here: <br>
+    <%= link_to "Edit layout.", "#" %> <br> <br>
 
-    <strong> How to use a nowpage </strong> <br>
+    <!-- <strong> How to use a nowpage </strong> <br>
     - In the footer of emails <br>
     - On business cards <br>
     - For yourself and fun <br>
@@ -42,7 +42,7 @@
     - Tumblr <br>
     - Dribble <br>
     - Catlovers.com <br>
-    - you get the idea ...
+    - you get the idea ... --> 
   </div>
 <% end %>
 
