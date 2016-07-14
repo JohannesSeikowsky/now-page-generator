@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   get "/signup", to: "users#signup_page", as: "signup_page"
   post "/signup", to: "users#signup", as: "signup"
 
-  # profile show
-  get "/:url_name", to: "profiles#show", as: "user_profile"
-
   # profule edit and update
   get "/edit", to: "profiles#edit", as: "user_profile_edit"
   put "/edit", to: "profiles#update", as: "user_profile_update"
+
+
+  # THIS NEEDS TO STAY ON BOTTOM!!! TO ALLOW THE ROUTE SYSTEM TO GO
+  # THROUGH THE OTHER SET ROUTES FIRST
+  get "/:url_name", to: "profiles#show", as: "user_profile"
 
 end

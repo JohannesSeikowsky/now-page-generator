@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    # literally means destroying cookie implemented log in.
+    session[:user_id] = nil
+    redirect_to root_path, notice: "You are logged out."
   end
 
 end

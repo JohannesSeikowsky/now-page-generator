@@ -5,16 +5,20 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    render 'edit'
+    if session[:user_id] # only allow access when there is a session implemented. AND only find relevant user by data in a session.
+      render 'edit' #@user = User.find(session[:user_id])
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
     #@user = User.find(params[:id])
     #@profile = @user.profile
   end
 
   def update
-    if @profile.update(profile_params)
-      redirect_to @profile, notice: 'Profile was successfully updated.'
+    if session[:user_id]
+      # do the updating. @user = User.find(session[:user_id])
     else
-      render :edit 
+      redirect_to login_path, notice: "Please log in."
     end
   end
   

@@ -11,8 +11,13 @@
   <% if request.referer == signup_url %>
     --> <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
   <% else %>
-    <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
-    <%= link_to "Login & Edit", login_path %>
+    <!-- discriminate btw users that are not logged in and those that are -->
+    <% unless user_logged_in? %>
+      <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
+      <%= link_to "Login & Edit", login_path %>
+    <% else %>
+      <%= link_to "Edit", user_profile_edit_path, class: "btn btn-md btn-success" %>
+    <% end %>
   <% end %>
 </div>
 
