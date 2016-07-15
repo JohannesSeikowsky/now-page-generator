@@ -9,14 +9,15 @@
 <!-- header -->
 <div class="simple_header">
   <% if request.referer == signup_url %>
-    --> <%= link_to "EDIT LAYOUT", "#", class: "edit_profile_link" %>
+    --> <%= link_to "EDIT LAYOUT", user_profile_edit_path, class: "edit_profile_link" %>
   <% else %>
     <!-- discriminate btw users that are not logged in and those that are -->
     <% unless user_logged_in? %>
       <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
       <%= link_to "Login & Edit", login_path %>
     <% else %>
-      <%= link_to "Edit", user_profile_edit_path, class: "btn btn-md btn-success" %>
+      <%= link_to "Edit your Nowpage", user_profile_edit_path, class: "btn btn-md btn-success" %> |
+      <%= link_to "Logout", logout_path %>
     <% end %>
   <% end %>
 </div>
@@ -32,40 +33,52 @@
     <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
     <strong> You are now online. </strong> <br>
     You can edit your layout anytime you log in or here: <br>
-    <%= link_to "Edit layout.", "#" %> <br> <br>
-
-    <!-- <strong> How to use a nowpage </strong> <br>
-    - In the footer of emails <br>
-    - On business cards <br>
-    - For yourself and fun <br>
-    - LinkedIn <br>
-    - Facebook <br>
-    - Twitter <br>
-    - Instagram <br>
-    - Github <br>
-    - Medium <br>
-    - Tumblr <br>
-    - Dribble <br>
-    - Catlovers.com <br>
-    - you get the idea ... --> 
+    <%= link_to "Edit layout.", "#" %> <br> <br> 
   </div>
 <% end %>
 
 
 <!-- central content -->
 <div class="simple_container">
-  <h1> What I’m doing now </h1>
-  <h3> Johannes R. Seikowsky (Layout) </h3>
-  <p>
-    These are the most important things I currently focus on:
-    Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br> <%= link_to "Edit this layout.", "#" %>
-  </p>
-  <hr>
+  
+  <!-- title -->
+  <% if @title.nil? || @title.empty? %>
+    <h1> What I’m doing now </h1>
+  <% else %>
+    <h1> <%= @title %> </h1>
+  <% end %>
+
+  <!-- subtitle --> 
+  <% if @subtitle.nil? || @subtitle.empty? %>
+    <h3> Johannes R. Seikowsky (Layout) </h3>
+  <% else %>
+    <h3> <%= @subtitle %> </h3>
+  <% end %>
+
+  <!-- content --> 
+  <% if @content.nil? || @content.empty? %>
+    <p>
+      These are the most important things I currently focus on:
+      Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br> <%= link_to "Edit this layout.", "#" %>
+    </p>
+  <% else %>
+    <p> <%= @content %> </p>
+  <% end %>
+
+  <!-- profile image -->
+  <br> 
   <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %>
-  <hr>
-  <p> 
-    I'm interested in programming, writing, research and teaching. Please feel free to get in touch about collaborating on any project concerned with these interests.
-  </p>
+  <br>
+
+  <!-- contact section -->  
+  <% if @contact_text.nil? || @contact_text.empty? %>
+    <p> 
+      I'm interested in programming, writing, research and teaching. Please feel free to get in touch about collaborating on any project concerned with these interests.
+    </p>
+  <% else %>
+    <p> <%= @contact_text %> </p>
+  <% end %>
+
   <form>
     <textarea></textarea>
     <input type="submit" value="Send" >

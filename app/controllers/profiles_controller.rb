@@ -2,11 +2,18 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find_by_url(params[:url_name])
+    @profile = @user.profile
+    @title = @profile.title
+    @subtitle = @profile.subtitle
+    @content = @profile.content
+    @contact_text = @profile.contact_text
   end
 
   def edit
-    if session[:user_id] # only allow access when there is a session implemented. AND only find relevant user by data in a session.
-      render 'edit' #@user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @profile = @user.profile
+      render 'edit'
     else
       redirect_to login_path, notice: "Please log in."
     end
@@ -15,17 +22,20 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if session[:user_id]
-      # do the updating. @user = User.find(session[:user_id])
+    if user_logged_in?
+      @user = User.find(session[:user_id])
+      @profile = @user.profile
+      @profile.update(profile_params)
+      redirect_to user_profile_path(@user.url), notice: "Layout updated."
     else
       redirect_to login_path, notice: "Please log in."
     end
   end
-  
+
 
   private
   def profile_params
-    params.require(:profile).permit(:profile_name, :content, :user_id)
+    params.require(:profile).permit(:title, :subtitle, :content, :contact_text, :user_id)
   end
 
 end

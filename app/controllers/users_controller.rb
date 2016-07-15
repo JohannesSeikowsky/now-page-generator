@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       # setting the default profile eher upon creation.
       session[:user_id] = @user.id # effectively logging in
-      @user.build_profile(content: "This worked well.").save
+      @user.build_profile.save
       redirect_to user_profile_path(url_name: @user.url)
     else
       render "signup"
