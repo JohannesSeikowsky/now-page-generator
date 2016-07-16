@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715151217) do
+ActiveRecord::Schema.define(version: 20160716124713) do
 
   create_table "profiles", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "title"
     t.string   "subtitle"
     t.text     "contact_text"
-    t.boolean  "title_presence",        default: true
-    t.boolean  "subtitle_presence",     default: true
-    t.boolean  "content_presence",      default: true
-    t.boolean  "contact_text_presence", default: true
+    t.boolean  "title_delete",        default: false
+    t.boolean  "subtitle_delete",     default: false
+    t.boolean  "content_delete",      default: false
+    t.boolean  "contact_text_delete", default: false
   end
 
   create_table "users", force: :cascade do |t|

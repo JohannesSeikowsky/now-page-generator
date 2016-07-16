@@ -7,14 +7,29 @@
 <div class="simple_container">
   <h2> Editing Nowpage </h2>
   <%= form_for @profile, url: user_profile_update_path do |f| %>
+    
+    <!-- test suit:
+      - set delete attr to true when checked
+      - and to false when unchecked
+      - represent state when called
+    -->
+
     <h4>Title</h4>
-    <%= f.text_field :title, plaeholder: "title" %>
+    <%= f.text_field :title, plaeholder: "title" %> <br>
+    <%= f.check_box :title_delete %> <span style="font-size: 11px;"> delete title section. </span>
+
     <h4>Subtitle</h4>
-    <%= f.text_field :subtitle, plaeholder: "sutitle" %>
+    <%= f.text_field :subtitle, plaeholder: "sutitle" %> <br>
+    <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> delete title section. </span>
+   
     <h4>Content</h4>
-    <%= f.text_field :content, plaeholder: "content" %>
+    <%= f.text_field :content, plaeholder: "content" %> <br>
+    <%= f.check_box :content_delete %> <span style="font-size: 11px;"> delete title section. </span>
+
     <h4>Contact Text</h4>
-    <%= f.text_field :contact_text, plaeholder: "contact" %>
+    <%= f.text_field :contact_text, plaeholder: "contact" %> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> delete title section. </span> <br>
+  
     <%= f.submit "Done." %>
   <% end %>
 </div>
