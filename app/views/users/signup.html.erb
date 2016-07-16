@@ -34,5 +34,6 @@
   var url_input = document.getElementById('url_input');
 
   url_input.onkeyup = function(){
-      document.getElementById('url_simulation').innerHTML = "www.mynowpage.com/" + url_input.value;}
+      document.getElementById('url_simulation').innerHTML = "www.mynowpage.com/" + url_input.value.replace(/\s+/g, '-').toLowerCase();
+    }
 </script>

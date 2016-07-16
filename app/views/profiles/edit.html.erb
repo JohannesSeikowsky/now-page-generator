@@ -8,28 +8,22 @@
   <h2> Editing Nowpage </h2>
   <%= form_for @profile, url: user_profile_update_path do |f| %>
     
-    <!-- test suit:
-      - set delete attr to true when checked
-      - and to false when unchecked
-      - represent state when called
-    -->
-
     <h4>Title</h4>
     <%= f.text_field :title, plaeholder: "title" %> <br>
-    <%= f.check_box :title_delete %> <span style="font-size: 11px;"> delete title section section. </span>
+    <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove title section section. </span>
 
     <h4>Subtitle</h4>
     <%= f.text_field :subtitle, plaeholder: "sutitle" %> <br>
-    <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> delete subtitle section. </span>
+    <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove subtitle section. </span>
    
-    <h4>Content</h4>
+    <h4>Main Content</h4>
     <%= f.text_field :content, plaeholder: "content" %> <br>
-    <%= f.check_box :content_delete %> <span style="font-size: 11px;"> delete content section. </span>
+    <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove content section. </span>
 
-    <h4>Contact Text</h4>
+    <h4>Contact Me</h4>
     <%= f.text_field :contact_text, plaeholder: "contact" %> <br>
-    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> delete contact section. </span> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove contact section. </span> <br>
   
-    <%= f.submit "Done." %>
+    <%= f.submit "Done Editing." %>
   <% end %>
 </div>

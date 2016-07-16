@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+before_save do
+  self.url = self.url.gsub(/\s+/, '-').downcase 
+end
+
   # associations
   has_one :profile
 

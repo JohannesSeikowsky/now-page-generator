@@ -9,7 +9,7 @@
 <!-- header -->
 <div class="simple_header">
   <% if request.referer == signup_url %>
-    --> <%= link_to "EDIT LAYOUT", user_profile_edit_path, class: "edit_profile_link" %>
+    --> <%= link_to "EDIT NOWPAGE", user_profile_edit_path, class: "edit_profile_link" %>
   <% else %>
     <!-- discriminate btw users that are not logged in and those that are -->
     <% unless user_logged_in? %>
@@ -31,9 +31,8 @@
 <% if request.referer == signup_url %>
   <div class="after_signup_directions">
     <i class="fa fa-times fa-lg" id="close" aria-hidden="true"></i>
-    <strong> You are now online. </strong> <br>
-    You can edit the layout anytime you log in or here: <br>
-    <%= link_to "Edit layout.", "#" %> <br> <br> 
+    <strong> This nowpage is now online.</strong>
+     <br> <br>
   </div>
 <% end %>
 
