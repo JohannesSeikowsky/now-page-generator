@@ -40,49 +40,54 @@
 
 <!-- central content -->
 <div class="simple_container">
-  
-  <!-- title -->
-  <% if @title.nil? || @title.empty? %>
-    <h1> What I’m doing now </h1>
-  <% else %>
-    <h1> <%= @title %> </h1>
+    <!-- title -->
+  <% unless @profile.title_delete %>
+    <% if @title.nil? || @title.empty? %>
+      <h1> What I’m doing now </h1>
+    <% else %>
+      <h1> <%= @title %> </h1>
+    <% end %>
   <% end %>
 
   <!-- subtitle --> 
-  <% if @subtitle.nil? || @subtitle.empty? %>
-    <h3> Johannes R. Seikowsky (Layout) </h3>
-  <% else %>
-    <h3> <%= @subtitle %> </h3>
+  <% unless @profile.subtitle_delete %>
+    <% if @subtitle.nil? || @subtitle.empty? %>
+      <h3> Johannes R. Seikowsky (Layout) </h3>
+    <% else %>
+      <h3> <%= @subtitle %> </h3>
+    <% end %>
   <% end %>
 
   <!-- content --> 
-  <% if @content.nil? || @content.empty? %>
-    <p>
-      These are the most important things I currently focus on:
-      Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br> <%= link_to "Edit this layout.", "#" %>
-    </p>
-  <% else %>
-    <p> <%= @content %> </p>
+  <% unless @profile.content_delete %>
+    <% if @content.nil? || @content.empty? %>
+      <p>
+        These are the most important things I currently focus on:
+        Places - My girlfriend and I are trying an experiment of living in different, interesting places for a couple of months each. Enough to properly internalize each place. Right now we are in Tel Aviv for 3 months and it's going well. 2) Programming- I hack. This site is my latest project. I've done a few others and have a long pipeline of ideas ahead of me. I'm also learning more about penetration testing, as part of which I'm expanding from Ruby to Python. I write. I try not to, but somehow always end up producing something sometimes. By now there are almost 20 blog posts by me. You can find them on medium.<br> <%= link_to "Edit this layout.", "#" %>
+      </p>
+    <% else %>
+      <p> <%= @content %> </p>
+    <% end %>
   <% end %>
 
-  <!-- profile image -->
-  <br> 
-  <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %>
-  <br>
+  <!-- image -->
+  <br> <%= image_tag "johannes.jpg", class: "img-responsive img-circle", style: "width:68%; margin: 15px 16% 15px 16%;" %> <br>
 
-  <!-- contact section -->  
-  <% if @contact_text.nil? || @contact_text.empty? %>
-    <p> 
-      I'm interested in programming, writing, research and teaching. Please feel free to get in touch about collaborating on any project concerned with these interests.
-    </p>
-  <% else %>
-    <p> <%= @contact_text %> </p>
+  <!-- contact -->  
+  <% unless @profile.contact_text_delete %>
+    <% if @contact_text.nil? || @contact_text.empty? %>
+      <p> 
+        I'm interested in programming, writing, research and teaching. Please feel free to get in touch about collaborating on any project concerned with these interests.
+      </p>
+    <% else %>
+      <p> <%= @contact_text %> </p>
+    <% end %>
+
+    <form>
+      <textarea></textarea>
+      <input type="submit" value="Send" >
+    </form>
   <% end %>
-
-  <form>
-    <textarea></textarea>
-    <input type="submit" value="Send" >
-  </form>
 </div>
 
 
