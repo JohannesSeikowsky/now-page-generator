@@ -1,12 +1,12 @@
 <!-- header -->
 <div class="simple_header">
-  <%= link_to "Profile", user_profile_path(@user.url) %> |
+  <%= link_to "Nowpage", user_profile_path(@user.url) %> |
   <%= link_to "Logout", logout_path %>
 </div>
 
 <div class="simple_container">
   <h2> Editing Nowpage </h2>
-  <%= form_for @profile, url: user_profile_update_path do |f| %>
+  <%= form_for @profile, url: user_profile_update_path, html: { multipart: true } do |f| %>
     
     <h4>Title</h4>
     <%= f.text_field :title, plaeholder: "title" %> <br>
@@ -19,6 +19,10 @@
     <h4>Main Content</h4>
     <%= f.text_field :content, plaeholder: "content" %> <br>
     <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove content section. </span>
+
+    <h4>Profile Image</h4>
+    <%= f.file_field :profile_image %> <br>
+    <!-- <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove profile image </span> -->
 
     <h4>Contact Me</h4>
     <%= f.text_field :contact_text, plaeholder: "contact" %> <br>

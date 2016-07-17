@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716124713) do
+ActiveRecord::Schema.define(version: 20160716234732) do
 
   create_table "profiles", force: :cascade do |t|
     t.text     "content"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160716124713) do
     t.boolean  "subtitle_delete",     default: false
     t.boolean  "content_delete",      default: false
     t.boolean  "contact_text_delete", default: false
+    t.string   "profile_image"
   end
 
   create_table "users", force: :cascade do |t|
