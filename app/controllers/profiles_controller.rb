@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   private
   def profile_params
     params.require(:profile).permit(:title, :subtitle, :content, :contact_text, :profile_image, :title_delete, :subtitle_delete, :content_delete, 
-      :contact_text_delete, :user_id)
+      :contact_text_delete, :profile_image_delete, :user_id)
   end
 
 end

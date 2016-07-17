@@ -72,10 +72,12 @@
   <% end %>
 
   <!-- image -->
-  <br> 
-    <%= image_tag "angie.jpg", style: "width:68%; margin: 15px 16% 15px 16%;" unless @profile.profile_image? %>
-    <%= image_tag @profile.profile_image.url, style: "width:68%; margin: 15px 16% 15px 16%;" if @profile.profile_image? %>
-  <br>
+  <% unless @profile.profile_image_delete %>
+    <br> 
+      <%= image_tag "angie.jpg", style: "width:68%; margin: 15px 16% 15px 16%;" unless @profile.profile_image? %>
+      <%= image_tag @profile.profile_image.url, style: "width:68%; margin: 15px 16% 15px 16%;" if @profile.profile_image? %>
+    <br>
+  <% end %>
 
   <!-- contact -->  
   <% unless @profile.contact_text_delete %>
