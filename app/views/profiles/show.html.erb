@@ -16,7 +16,7 @@
       <%= link_to "What is a nowpage?", "", id: "explain_now_link" %> |
       <%= link_to "Login & Edit", login_path %>
     <% else %>
-      <%= link_to "Edit Nowpage", user_profile_edit_path, class: "btn btn-md btn-success" %> |
+      <%= link_to "Edit", user_profile_edit_path %> |
       <%= link_to "Logout", logout_path %>
     <% end %>
   <% end %>
@@ -86,8 +86,7 @@
   <% unless @profile.contact_text_delete %>
     <% if @contact_text.nil? || @contact_text.empty? %>
       <p> 
-        Feel free to get in touch by sending a message in the box below. It goes directly to my Email Inbox.
-        <!-- I'm interested in subatomic particle physics, crime thrillers and experimental cooking. Contact me if you like :) -->
+        Feel free to get in touch by sending a message in the box below. I will receive your message by mail.
       </p>
     <% else %>
       <p> <%= @contact_text %> </p>
@@ -98,7 +97,15 @@
       <input type="submit" value="Send" >
     </form>
   <% end %>
-  <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br>
+
+  <% if user_logged_in? %>
+    <div class="button">
+     <%= link_to "Edit this layout.", user_profile_edit_path, style: "background-color: orange; padding: 14px 73px;" %>
+    </div>
+  <% end %>
+
+  <br> <br> <br> <br> <br> <br>
 </div>
 
 
