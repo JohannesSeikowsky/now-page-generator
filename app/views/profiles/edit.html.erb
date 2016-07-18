@@ -5,31 +5,34 @@
 </div>
 
 <div class="simple_container">
-  <h2> Editing Nowpage </h2>
+
+  <br> <br>
+
   <%= form_for @profile, url: user_profile_update_path, html: { multipart: true } do |f| %>
     
-    <h4>Title</h4>
-    <%= f.text_field :title, plaeholder: "title" %> <br>
-    <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove this section. </span>
+    <!-- <%= f.text_field :title, placeholder: "What I’m doing now" %> <br>
+    <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove. </span> 
+    <br> <br> -->
+    <h4>Edit Name</h4>
+    <%= f.text_field :subtitle, placeholder: "Dagny A. Taggard" %> <br>
+    <!-- <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove. </span> -->
+    <h4>Edit Content</h4>
+    <%= f.text_area :content, plaeholder: "content" %> <br>
+    <!-- <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove. </span> -->
 
-    <h4>Subtitle</h4>
-    <%= f.text_field :subtitle, plaeholder: "sutitle" %> <br>
-    <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove this section. </span>
-   
-    <h4>Main Content</h4>
-    <%= f.text_field :content, plaeholder: "content" %> <br>
-    <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove this section. </span>
-
-    <br> <br> <h4>Image</h4>
+    <h4>Edit Image</h4>
     <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %> <br>
-    <%= f.check_box :profile_image_delete %> <span style="font-size: 11px;"> remove this section. </span>
+    <!-- <%= f.check_box :profile_image_delete %> <span style="font-size: 11px;"> remove. </span> -->
     <br>
 
-    <h4>Contact Me</h4>
-    <%= f.text_field :contact_text, plaeholder: "contact" %> <br>
-    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove this section. </span> <br>
-  
-    <%= f.submit "Done Editing." %>
+    <h4>Remove parts</h4>
+    <!-- <%= f.text_field :contact_text, plaeholder: "contact" %> <br> -->
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove "What I'm doing now" headline </span> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove name sub-headline </span> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove main content </span> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove profile image </span> <br>
+    <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove contact me section </span> <br> <br>
+    <%= f.submit "Done." %>
   <% end %>
 </div>
 
