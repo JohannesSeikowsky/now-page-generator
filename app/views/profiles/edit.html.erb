@@ -11,10 +11,10 @@
     <h5>Name</h5>
       <%= f.text_field :subtitle, placeholder: "Dagny A. Taggard" %> <br>
     <h5>Content </h5>
-      <%= f.text_area :content, plaeholder: "content" %> <br>
+      <%= f.text_area :content, placeholder: "What major things are you currently focusing on?", style: "width: 355px; height: 180px; border: 2px solid #eee;" %> <br>
     <h5>Image</h5>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %> <br> <br>
-    <h5>Remove parts</h5>
+    <h5>Remove sections</h5>
       <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove "What I'm doing now" headline </span> <br>
       <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove name sub-headline </span> <br>
       <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove main content </span> <br>
