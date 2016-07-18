@@ -5,23 +5,23 @@
 </div>
 
 <div class="simple_container">
-  <br> <h3>Editing Nowpage</h3>
+  <br> <h3>Edit Nowpage</h3>
   <%= form_for @profile, url: user_profile_update_path, html: { multipart: true } do |f| %>
    
-    <h4>Name</h4>
+    <h5>Name</h5>
       <%= f.text_field :subtitle, placeholder: "Dagny A. Taggard" %> <br>
-    <h4>Content <span style="font-size: 11px;"> - What are you focusing on right now? </span> </h4>
+    <h5>Content </h5>
       <%= f.text_area :content, plaeholder: "content" %> <br>
-    <h4>Image</h4>
+    <h5>Image</h5>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %> <br> <br>
-    <h4>Remove parts</h4>
+    <h5>Remove parts</h5>
       <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove "What I'm doing now" headline </span> <br>
       <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove name sub-headline </span> <br>
       <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove main content </span> <br>
       <%= f.check_box :profile_image_delete %> <span style="font-size: 11px;"> remove profile image </span> <br>
       <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove contact me section </span> <br> <br>
-    <%= f.submit "Execute all changes.", style: "background-color: orange;" %>
-    
+    <%= f.submit "Done.", style: "background-color: orange;" %>
+
   <% end %>
 </div>
 
