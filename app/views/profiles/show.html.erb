@@ -77,7 +77,9 @@
 
   <!-- image -->
   <% unless @profile.profile_image_delete %>
-      <%= image_tag "no_image.png", style: "width:68%; margin: 15px 16% 15px 16%;" unless @profile.profile_image? %>
+      <%= link_to user_profile_edit_path do %>
+        <%= image_tag "no_image.png", style: "width:68%; margin: 15px 16% 15px 16%;" unless @profile.profile_image? %>
+      <% end %>
       <%= image_tag @profile.profile_image.url, style: "width:68%; margin: 15px 16% 15px 16%;" if @profile.profile_image? %>
     <br>
   <% end %>
