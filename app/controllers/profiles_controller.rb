@@ -25,8 +25,11 @@ class ProfilesController < ApplicationController
     if user_logged_in?
       @user = User.find(session[:user_id])
       @profile = @user.profile
-      @profile.update(profile_params)
-      redirect_to user_profile_path(@user.url), notice: "Layout updated."
+      if @profile.update(profile_params)
+        redirect_to user_profile_path(@user.url), notice: "Layout updated."
+      else
+        redirect_to user_profile_path(@user.url), notice: "Error! Please only upload images that aren't too big."
+      end
     else
       redirect_to login_path, notice: "Please log in."
     end

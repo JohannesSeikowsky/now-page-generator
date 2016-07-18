@@ -4,7 +4,7 @@
     <%= link_to "Login", login_path %> |
     <%= link_to "Sign-up", signup_path %>
   <% else %>
-    <%= link_to "Your Nowpage", user_profile_path(@user.url) %> |
+    <%= link_to "Nowpage", user_profile_path(@user.url) %> |
     <%= link_to "Edit Nowpage", user_profile_edit_path %> |
     <%= link_to "Logout", logout_path %>
   <% end %>
