@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
-before_save do
-  self.url = self.url.gsub(/\s+/, '-').downcase 
-end
+  before_save do
+    self.url = self.url.gsub(/\s+/, '-').downcase 
+  end
 
   # associations
   has_one :profile
@@ -25,4 +25,5 @@ end
   def check_password(password_provided)
     BCrypt::Engine.hash_secret(password_provided, self.password_salt) == self.password
   end
+  
 end

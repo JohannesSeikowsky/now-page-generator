@@ -252,10 +252,12 @@ body {
   font-weight: bold;
   text-decoration: none;
   border: 2px solid black;
-  background-color: orange;
   // normal and mobile
   @media (min-width: 500px){ padding: 10px 66px; }
   @media (max-width: 500px){ padding: 3px 66px; }
+}
+.edit_profile_link:hover{
+  background-color: orange;
 }
 
 // after-signup-directions
@@ -265,19 +267,17 @@ body {
   //left: 75px;
   top: 55px;
   right: 25px;
-  width: 204px; 
+  width: 186px; 
   color: black;
   background-color: white;
   border: 2px solid black;
-  border-radius: 5px;
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
+
   padding: 26px 26px 14px 26px;
   #close{
     position: absolute;
     //top: -8px;
     //right: -9px;
-    top: 3px;
+    top: 1px;
     right: 3px;
     cursor: pointer;
   }

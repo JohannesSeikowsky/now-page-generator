@@ -8,20 +8,19 @@
   <br> <h3>Edit Nowpage</h3>
   <%= form_for @profile, url: user_profile_update_path, html: { multipart: true } do |f| %>
    
-    <h5>Name</h5>
+    <h5>Name section</h5>
       <%= f.text_area :subtitle, placeholder: "Dagny A. Taggard", style: "width: 355px; height: 20px; border: 2px solid #eee;" %> <br>
-    <h5>Content </h5>
+    <h5>Content section</h5>
       <%= f.text_area :content, placeholder: "What are the major things you are currently focusing on?", style: "width: 355px; height: 180px; border: 2px solid #eee;" %> <br>
-    <h5>Image</h5>
+    <h5>Profile Image</h5>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %> <br> <br>
-    <h5>Remove sections</h5>
+    <h5>Remove parts of page</h5>
       <%= f.check_box :title_delete %> <span style="font-size: 11px;"> remove "What I'm doing now" headline </span> <br>
-      <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove name sub-headline </span> <br>
+      <%= f.check_box :subtitle_delete %> <span style="font-size: 11px;"> remove name section </span> <br>
       <%= f.check_box :content_delete %> <span style="font-size: 11px;"> remove main content </span> <br>
       <%= f.check_box :profile_image_delete %> <span style="font-size: 11px;"> remove profile image </span> <br>
-      <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove contact me section </span> <br> <br>
-    <%= f.submit "Done.", style: "background-color: orange;" %>
-
+      <%= f.check_box :contact_text_delete %> <span style="font-size: 11px;"> remove contact me section </span>
+      <%= f.submit "Finish Editing.", style: "background-color: orange; padding: 7px 122px; margin-top: 22px;" %> <br> <br>
   <% end %>
 </div>
 
